@@ -1,0 +1,26 @@
+#Guess a number
+from random import randint
+import sys
+
+int_min = 0
+int_max = 15
+int_number = randint(int_min, int_max)
+str_statement = ' ' .join(["I'm thinking of a number...between", str(int_min), "and", str(int_max)])
+int_usr_guess = int(input(str_statement))
+i = 0
+
+while i != 1:
+    if int_usr_guess > int_max or int_usr_guess < int_min :
+        print("Guess must be between", int_min, "and", int_max)
+        int_usr_guess = int(input(str_statement))
+        i = 0
+    else :
+        i = 1
+
+while int_usr_guess != int_number:
+    if int_usr_guess < int_number:
+        int_usr_guess = int(input("Close but no cigar!  Guess higher..."))
+    else :
+        if int_usr_guess > int_number:
+            int_usr_guess = int(input("Close but no cigar!  Guess lower..."))
+print("To the victor the spoils...")
