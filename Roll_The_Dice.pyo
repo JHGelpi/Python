@@ -1,0 +1,24 @@
+#Roll the dice!
+#Dice program
+from random import randint
+
+int_min = 1
+int_max = 8
+str_rollagain = ("Ready to play (Y/N)?")
+str_rollagain = str_rollagain.upper()
+
+while str_rollagain != "Y" or str_rollagain != "N" :
+    print("Please provide a valid response")
+    str_rollagain = ("Ready to play (Y/N)?")
+
+str_useranswer = ""
+i=0
+
+while str_rollagain == "Y" :
+    print("You rolled a " randint(int_min, int_max))
+    str_useranswer = ("Would you like to roll again (Y/N)?")
+    str_useranswer = str_useranswer.upper()
+
+    while str_rollagain != "Y" or str_rollagain != "N":
+        print("Please provide a valid response")
+        str_rollagain = ("Ready to play (Y/N)?")
