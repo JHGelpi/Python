@@ -1,0 +1,51 @@
+#CSV Import
+import csv
+import re
+'''
+with open('/home/wgelpi/Documents/EE_Address_Mock.csv') as csvfile:
+    ee_address = csv.reader(csvfile)
+    i=0
+    for row in ee_address:
+        for row in ee_address :
+            if re.sub(r'\W+', '', str.upper(row[1])).strip() == re.sub(r'\W+', '', str.upper(row[6])).strip() :
+                print(','.join(row),",Match on Addr1")
+                break
+            if re.sub(r'\W+', '', str.upper(row[3])).strip() == re.sub(r'\W+', '', str.upper(row[8])).strip() :
+                print(','.join(row),",Match on City")
+                break
+            if re.sub(r'\W+', '', str.upper(row[4])).strip() == re.sub(r'\W+', '', str.upper(row[9])).strip() :
+                print(','.join(row),",Match on State")
+                break
+            if re.sub(r'\W+', '', str.upper(row[5])).strip() == re.sub(r'\W+', '', str.upper(row[10])).strip() :
+                print(','.join(row),",Match on Zip")
+                break
+        i=i+1
+        '''
+dubai_addr1 = "Red Hat Dubai"
+#dubai_addr1 = "Arjaan Office Tower Office #605, DMC Dubai"
+dubai_addr2 = "Office Park Building, Block A Floor # 4. Office 406A"
+dubai_addr3 = "2"
+dubai_country = "AE"
+dubai_townorcity = ""
+dubai_postalcode = ""
+
+with open('/home/wgelpi/Documents/Employee_Address_UAE.csv') as csvfile:
+    ee_address = csv.reader(csvfile)
+    i=0
+    for row in ee_address:
+
+        for row in ee_address :
+            #print(row[5])
+            if re.sub(r'\W+', '', str.upper(row[5])).strip() == re.sub(r'\W+', '', str.upper(dubai_addr1)).strip() :
+                print(','.join(row), ",Match on Addr1")
+                break
+            if re.sub(r'\W+', '', str.upper(row[6])).strip() == re.sub(r'\W+', '', str.upper(dubai_addr2)).strip() :
+                print(','.join(row), ",Match on Addr2")
+                break
+            if re.sub(r'\W+', '', str.upper(row[7])).strip() == re.sub(r'\W+', '', str.upper(dubai_addr3)).strip() :
+                print(','.join(row), ",Match on Addr3")
+                break
+            if re.sub(r'\W+', '', str.upper(row[8])).strip() == re.sub(r'\W+', '', str.upper(dubai_country)).strip() :
+                print(','.join(row), ",Match on Country")
+                break
+        i = i + 1
